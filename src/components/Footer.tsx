@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="scroll-mt-20 border-t border-[#e0e5e8] bg-[#f8f9fa]">
       <div className="mx-auto max-w-6xl px-8 py-8 lg:px-16 xl:px-24">
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-left">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-8">
           <Link href="/" className="shrink-0">
             <ImageWithBasePath
               src="/images/logo.png"
