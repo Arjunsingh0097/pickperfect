@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithBasePath from "@/components/ImageWithBasePath";
 import Link from "next/link";
 import { QuoteModalTrigger } from "@/components/QuoteModalTrigger";
 
@@ -14,7 +14,7 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Image
+          <ImageWithBasePath
             src="/images/logo.png"
             alt="Pick Perfect"
             width={280}

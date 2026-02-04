@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithBasePath from "@/components/ImageWithBasePath";
 import Link from "next/link";
 import Header from "@/components/Header";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -104,7 +104,7 @@ export default function Home() {
               <div className="relative">
               <div className="relative flex flex-col gap-6 lg:block lg:gap-0">
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:block">
-                  <Image
+                  <ImageWithBasePath
                     src="/images/Howitworks(1).png"
                     alt="How it works"
                     width={600}
@@ -116,7 +116,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:absolute lg:-bottom-48 lg:-right-16 lg:w-[85%]">
-                  <Image
+                  <ImageWithBasePath
                     src="/images/Howitworks(2).jpg"
                     alt="How it works"
                     width={600}
@@ -160,7 +160,7 @@ export default function Home() {
               {/* Overlapping profile circles */}
               <div className="mt-10 flex -space-x-4">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Image
+                  <ImageWithBasePath
                     key={i}
                     src={`https://i.pravatar.cc/112?img=${10 + i}`}
                     alt=""
@@ -232,7 +232,7 @@ export default function Home() {
                     className="group relative overflow-hidden rounded-2xl bg-white shadow-xl transition hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-teal-dark"
                   >
                     <div className="relative aspect-4/3 overflow-hidden">
-                      <Image
+                      <ImageWithBasePath
                         src={card.image}
                         alt={card.alt}
                         width={600}
@@ -277,7 +277,7 @@ export default function Home() {
                 <FAQAccordion />
               </div>
               <div className="relative min-h-[320px] w-full lg:min-h-[480px] lg:pl-4">
-                <Image
+                <ImageWithBasePath
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop"
                   alt="Interior with moving boxes and furniture"
                   width={800}

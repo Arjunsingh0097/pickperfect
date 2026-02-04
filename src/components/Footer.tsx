@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageWithBasePath from "@/components/ImageWithBasePath";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-8 py-8 lg:px-16 xl:px-24">
         <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-left">
           <Link href="/" className="shrink-0">
-            <Image
+            <ImageWithBasePath
               src="/images/logo.png"
               alt="Pick Perfect"
               width={180}
