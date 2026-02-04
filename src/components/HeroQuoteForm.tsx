@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Home, MapPin, ChevronDown, FileText } from "lucide-react";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const moveTypes = [
   { value: "local", label: "Local Move" },
   { value: "interstate", label: "Interstate Move" },
@@ -25,7 +27,7 @@ export default function HeroQuoteForm() {
     const movingTo = (formData.get("movingTo") as string) ?? "";
 
     try {
-      const res = await fetch("/api/submit-quote", {
+      const res = await fetch(`${BASE}/api/submit-quote`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
