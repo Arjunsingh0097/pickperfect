@@ -27,16 +27,30 @@ export async function POST(request: NextRequest) {
     console.log("submit-quote: auth header length =", authHeader.length);
   }
 
-  let body: { moveType?: string; movingFrom?: string; movingTo?: string };
+  type Body = {
+    moveType?: string;
+    movingFrom?: string;
+    movingTo?: string;
+    jobType?: string;
+    jobTypeDetails?: string;
+    movingDate?: string;
+    fullName?: string;
+    email?: string;
+    phone?: string;
+    additionalServices?: string;
+  };
+  let body: Body;
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
   }
 
-  const moveType = String(body.moveType ?? "").trim();
   const movingFrom = String(body.movingFrom ?? "").trim();
   const movingTo = String(body.movingTo ?? "").trim();
+  const fullName = String(body.fullName ?? "").trim();
+  const email = String(body.email ?? "").trim();
+  const phone = String(body.phone ?? "").trim();
 
   if (!movingFrom || !movingTo) {
     return NextResponse.json(
@@ -44,17 +58,35 @@ export async function POST(request: NextRequest) {
       { status: 400 },
     );
   }
+  if (!fullName || !email || !phone) {
+    return NextResponse.json(
+      { error: "Full name, email and phone are required." },
+      { status: 400 },
+    );
+  }
 
-  // Map form values to sheet labels for column A (move type)
   const moveTypeLabels: Record<string, string> = {
     local: "Local Move",
     interstate: "Interstate Move",
     international: "International Move",
   };
+  const moveType = String(body.moveType ?? "").trim();
   const moveTypeLabel =
-    moveTypeLabels[moveType] !== undefined
-      ? moveTypeLabels[moveType]
-      : moveType || "Local Move";
+    moveTypeLabels[moveType] !== undefined ? moveTypeLabels[moveType] : moveType || "Local Move";
+
+  // Sheety expects camelCase keys in the JSON body (e.g. "First Name" in sheet → "firstName" in API)
+  const lead: Record<string, string> = {
+    movingType: moveTypeLabel,
+    moveFrom: movingFrom,
+    moveTo: movingTo,
+    jobType: String(body.jobType ?? "").trim(),
+    jobTypeDetails: String(body.jobTypeDetails ?? "").trim(),
+    movingDate: String(body.movingDate ?? "").trim(),
+    fullName: fullName,
+    emailAddress: email,
+    phoneNumber: phone,
+    additionalServices: String(body.additionalServices ?? "").trim(),
+  };
 
   try {
     const res = await fetch(SHEETY_API_URL, {
@@ -63,14 +95,7 @@ export async function POST(request: NextRequest) {
         "Content-Type": "application/json",
         Authorization: authHeader,
       },
-      // Sheety camelCases sheet headers: moving_type → movingType, moving_from → movingFrom, moving_to → movingTo
-      body: JSON.stringify({
-        lead: {
-          movingType: moveTypeLabel,
-          movingFrom: movingFrom,
-          movingTo: movingTo,
-        },
-      }),
+      body: JSON.stringify({ lead }),
     });
 
     if (!res.ok) {

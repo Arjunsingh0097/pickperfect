@@ -21,7 +21,7 @@ const FAQ_ITEMS = [
   {
     question: "Do you cover business and commercial moves?",
     answer:
-      "Yes, we include options for business removalists and commercial removal companies.",
+      "Yes, we include options for business movers and commercial removal companies.",
   },
 ];
 
@@ -33,16 +33,23 @@ export default function FAQAccordion() {
       {FAQ_ITEMS.map((item, index) => {
         const isOpen = openIndex === index;
         return (
-          <div key={index} className="rounded-xl transition">
+          <div
+            key={index}
+            className="overflow-hidden rounded-xl bg-[#e8edef] shadow-sm transition-shadow hover:shadow-md"
+          >
             <button
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : index)}
-              className="flex w-full items-start justify-between gap-4 rounded-xl bg-[#e8edef] px-6 py-5 text-left transition hover:bg-white/90"
+              className={`flex w-full items-start justify-between gap-4 px-6 py-5 text-left transition hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-teal/30 focus:ring-inset ${
+                isOpen ? "rounded-t-xl" : "rounded-xl"
+              }`}
               aria-expanded={isOpen}
             >
               <span className="font-semibold text-deep">{item.question}</span>
               <span
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-teal-dark transition ${isOpen ? "rotate-180" : ""}`}
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-teal-dark transition duration-200 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
                 aria-hidden
               >
                 <svg
@@ -62,14 +69,16 @@ export default function FAQAccordion() {
               </span>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-200 ease-out ${
-                isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              className={`grid transition-all duration-200 ease-out ${
+                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
             >
-              <div className="rounded-b-xl bg-[#e8edef] px-6 pb-5 pt-1">
-                <p className="text-sm leading-relaxed text-teal-dark">
-                  {item.answer}
-                </p>
+              <div className="overflow-hidden">
+                <div className="border-t border-teal-dark/10 px-6 pb-5 pt-3">
+                  <p className="text-sm leading-relaxed text-teal-dark">
+                    {item.answer}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -12,29 +12,29 @@ export type SeoConfig = {
 };
 
 const defaults: SeoConfig = {
-  title: "Compare Removalist Quotes | Pick Perfect",
+  title: "Compare removalists and request moving quotes | Pick Perfect",
   metaDescription:
-    "Submit one request and receive multiple removalist quotes across Brisbane, Melbourne, and Perth. Compare options and choose with confidence.",
+    "Request moving quotes from multiple local and interstate removalists. Compare and choose the right one with Pick Perfect, simple and free.",
   slug: "compare-quotes",
   jsonLdSchema: JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://www.pickperfect.com/#website",
-        url: "https://www.pickperfect.com",
+        "@id": "https://pickperfect.com.au/#website",
+        url: "https://pickperfect.com.au",
         name: "Pick Perfect",
         description:
-          "Compare removalist quotes across Brisbane, Melbourne, and Perth. Submit one request and receive multiple quotes.",
-        publisher: { "@id": "https://www.pickperfect.com/#organization" },
+          "Compare removalists in Brisbane, Melbourne, and Perth. Request quotes from 5+ moving companies. Simple and stress-free.",
+        publisher: { "@id": "https://pickperfect.com.au/#organization" },
         inLanguage: "en-AU",
       },
       {
         "@type": "Organization",
-        "@id": "https://www.pickperfect.com/#organization",
+        "@id": "https://pickperfect.com.au/#organization",
         name: "Pick Perfect",
-        url: "https://www.pickperfect.com",
-        logo: "https://www.pickperfect.com/images/logo.png",
+        url: "https://pickperfect.com.au",
+        logo: "https://pickperfect.com.au/images/logo.png",
       },
     ],
   }),

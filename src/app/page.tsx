@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Home as HomeIcon } from "lucide-react";
 import Header from "@/components/Header";
 import FAQAccordion from "@/components/FAQAccordion";
 import Footer from "@/components/Footer";
@@ -26,26 +25,13 @@ export default function Home() {
             {/* Content first on mobile, right column on desktop */}
             <div className="order-1 flex flex-col justify-center lg:order-2 lg:col-span-3">
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-deep sm:text-4xl lg:text-5xl">
-                Compare removalist quotes with{" "}
+                Compare removalists with{" "}
                 <span className="text-[#6dc1d2]">Pick Perfect</span>
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-teal-dark lg:text-lg">
-                Submit your move details once and receive multiple quotes from
-                moving companies in Brisbane, Melbourne, and Perth. Compare your
-                options at your own pace. No hassle, no chasing calls.
+                Request to receive quotes from 5+ moving companies. Compare
+                options in your own time. Simple and stress-free.
               </p>
-              <div className="mt-10 hidden items-start gap-4 rounded-2xl bg-white p-6 shadow-md lg:flex">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mint/40 text-teal">
-                  <HomeIcon className="h-6 w-6" aria-hidden />
-                </span>
-                <div>
-                  <p className="text-2xl font-bold text-teal-dark">100,000 People</p>
-                  <p className="mt-1 text-sm text-teal-dark/90">
-                    We have helped more than 100,000 people to find the best
-                    price on removals this year
-                  </p>
-                </div>
-              </div>
             </div>
             {/* Form second on mobile, left column on desktop */}
             <div className="order-2 lg:order-1 lg:col-span-2">
@@ -77,25 +63,25 @@ export default function Home() {
                     num: "01",
                     title: "Tell us about your move",
                     description:
-                      "Share details about your move, including where you're moving from and to, the property type, and your preferred moving date. This helps moving companies understand your requirements before providing quotes.",
+                      "Share details about your move, so moving companies clearly understand your requirements before sending quotes.",
                   },
                   {
                     num: "02",
                     title: "Receive quotes from moving companies",
                     description:
-                      "Once you submit your request, it's shared with up to three removalists that service your area and move type. They will contact you directly with quotes based on the details you provided.",
+                      "Your request is shared with relevant movers who can review your details and send quotes.",
                   },
                   {
                     num: "03",
                     title: "Compare and pick",
                     description:
-                      "Review the quotes you receive and compare key details such as truck size, number of movers, call-out fees, hourly rates, and estimated timeframes. This helps you choose the option that works best for your move.",
+                      "Review the quotes you receive, compare the details, and choose the option that best suits your move.",
                   },
                   {
                     num: "04",
                     title: "Move with confidence",
                     description:
-                      "After comparing your options, pick the mover that suits your needs. There's no obligation to book, and you stay in control of the decision.",
+                      "After comparing your options, choose the mover that best suits your needs, with no obligation to book.",
                   },
                 ].map((step) => (
                   <li key={step.num} className="flex gap-6">
@@ -164,16 +150,12 @@ export default function Home() {
                 About Pick Perfect
               </h2>
               <p className="mt-6 text-base leading-relaxed text-teal-dark">
-                Pick Perfect is a comparison platform designed to simplify the
-                moving process. We connect you with multiple removalists, helping
-                you get clear quotes and understand your options, all in one
-                place.
+                Pick Perfect helps you compare removalists in one place, making
+                the moving process simple and clear.
               </p>
               <p className="mt-4 text-base leading-relaxed text-teal-dark">
-                Instead of spending hours contacting movers individually, you
-                submit one request and receive quotes that make comparing
-                services, prices, and availability straightforward. This helps
-                you make a confident, informed decision with peace of mind.
+                Submit one request, receive multiple quotes, and compare
+                services and prices at your own pace.
               </p>
               {/* Overlapping profile circles */}
               <div className="mt-10 flex -space-x-4">
@@ -219,7 +201,7 @@ export default function Home() {
                     Find your perfect movers
                   </h2>
                   <p className="mt-2 text-lg text-white/80">
-                    Compare removalists in Brisbane, Melbourne, and Perth
+                    Compare removalists in Brisbane, Melbourne and Perth
                   </p>
                 </div>
                 <QuoteModalTrigger className="inline-flex shrink-0 items-center justify-center rounded-full bg-mint px-8 py-4 text-base font-semibold text-teal-dark transition hover:bg-mint/90 focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-teal-dark">
@@ -275,12 +257,8 @@ export default function Home() {
         >
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-deep sm:text-4xl lg:text-5xl">
-              What&apos;s all the fuss about?
+              What our customers say
             </h2>
-            <p className="mt-3 max-w-2xl text-lg text-teal-dark">
-              Every day, thousands of Australians come to Pick Perfect to make
-              connections with the right experts.
-            </p>
             <TestimonialMarquee />
           </div>
         </section>

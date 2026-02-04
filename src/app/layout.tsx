@@ -9,7 +9,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const BASE_URL = "https://www.pickperfect.com";
+const BASE_URL = "https://pickperfect.com.au";
 
 // Re-read SEO config on every request so dashboard changes appear on the landing page
 export const dynamic = "force-dynamic";
@@ -93,20 +93,20 @@ const defaultJsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://www.pickperfect.com/#website",
-      url: "https://www.pickperfect.com",
+      "@id": "https://pickperfect.com.au/#website",
+      url: "https://pickperfect.com.au",
       name: "Pick Perfect",
       description:
-        "Compare removalist quotes across Brisbane, Melbourne, and Perth. Submit one request and receive multiple quotes.",
-      publisher: { "@id": "https://www.pickperfect.com/#organization" },
+        "Compare removalists in Brisbane, Melbourne and Perth. Request quotes from 5+ moving companies. Simple and stress-free.",
+      publisher: { "@id": "https://pickperfect.com.au/#organization" },
       inLanguage: "en-AU",
     },
     {
       "@type": "Organization",
-      "@id": "https://www.pickperfect.com/#organization",
+      "@id": "https://pickperfect.com.au/#organization",
       name: "Pick Perfect",
-      url: "https://www.pickperfect.com",
-      logo: "https://www.pickperfect.com/images/logo.png",
+      url: "https://pickperfect.com.au",
+      logo: "https://pickperfect.com.au/images/logo.png",
     },
   ],
 };

@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer id="contact" className="scroll-mt-20 border-t border-[#e0e5e8] bg-[#f8f9fa]">
-      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <Link href="/" className="inline-block">
+      <div className="mx-auto max-w-6xl px-8 py-8 lg:px-16 xl:px-24">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-left">
+          <Link href="/" className="shrink-0">
             <Image
               src="/images/logo.png"
               alt="Pick Perfect"
@@ -15,21 +15,24 @@ export default function Footer() {
               className="h-10 w-auto sm:h-11"
             />
           </Link>
-          <p className="max-w-sm text-sm text-teal-dark/90">
+          <span className="h-4 w-px bg-teal-dark/30 shrink-0" aria-hidden />
+          <p className="text-sm text-teal-dark/90 min-w-0">
             Compare removalist quotes across Brisbane, Melbourne & Perth.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm text-teal-dark">
-            <Link href="#about" className="transition hover:text-deep">
+          <span className="hidden sm:block h-4 w-px bg-teal-dark/30 shrink-0" aria-hidden />
+          <nav className="flex items-center gap-x-6 text-sm text-teal-dark" aria-label="Footer">
+            <Link href="#about" className="transition hover:text-deep whitespace-nowrap">
               About
             </Link>
-            <Link href="#faq" className="transition hover:text-deep">
+            <Link href="#faq" className="transition hover:text-deep whitespace-nowrap">
               FAQ
             </Link>
-            <a href="mailto:customerservice@pickperfect.com" className="transition hover:text-deep">
+            <a href="mailto:customerservice@pickperfect.com" className="transition hover:text-deep whitespace-nowrap">
               Contact
             </a>
-          </div>
-          <p className="text-xs text-teal-dark/70">
+          </nav>
+          <span className="hidden sm:block h-4 w-px bg-teal-dark/30 shrink-0" aria-hidden />
+          <p className="text-xs text-teal-dark/70 whitespace-nowrap">
             © {new Date().getFullYear()} Pick Perfect
           </p>
         </div>

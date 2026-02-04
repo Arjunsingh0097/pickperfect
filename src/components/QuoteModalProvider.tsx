@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { X } from "lucide-react";
+import { X, FileText } from "lucide-react";
 import HeroQuoteForm from "@/components/HeroQuoteForm";
 
 type QuoteModalContextValue = {
@@ -70,6 +70,15 @@ export function QuoteModalProvider({ children }: { children: ReactNode }) {
   return (
     <QuoteModalContext.Provider value={value}>
       {children}
+      {/* Sticky quote form button - bottom left */}
+      <button
+        type="button"
+        onClick={openQuoteModal}
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-teal text-white shadow-lg transition hover:bg-teal-dark hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal focus:ring-offset-2 focus:ring-offset-white"
+        aria-label="Get a quote"
+      >
+        <FileText className="h-7 w-7" strokeWidth={2} aria-hidden />
+      </button>
       {isOpen && (
         <div className="fixed inset-0 z-999 flex items-center justify-center px-4 py-10 sm:px-6">
           <div
