@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Home, MapPin, ChevronDown, FileText, Check, Calendar, User, Mail, Phone, List, ArrowRight, ArrowLeft } from "lucide-react";
+import { Home, MapPin, ChevronDown, FileText, Check, Calendar, User, Mail, Phone, ArrowRight, ArrowLeft } from "lucide-react";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -15,6 +15,17 @@ const jobTypes = [
   { value: "1-5-bedrooms", label: "1–5+ bedrooms" },
   { value: "office", label: "Office" },
   { value: "others", label: "Others" },
+];
+
+const additionalServiceOptions = [
+  "Moving Home",
+  "Moving Office",
+  "Furniture Removals",
+  "Commercial Removals",
+  "Corporate Relocations",
+  "Packing",
+  "Interstate Removalists",
+  "Local Removalists",
 ];
 
 const inputBase =
@@ -38,7 +49,7 @@ export default function HeroQuoteForm() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [additionalServices, setAdditionalServices] = useState("");
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [jobDropdownOpen, setJobDropdownOpen] = useState(false);
@@ -94,7 +105,7 @@ export default function HeroQuoteForm() {
           fullName: fullName.trim(),
           email: email.trim(),
           phone: phone.trim(),
-          additionalServices: additionalServices.trim(),
+          additionalServices: selectedServices.join(", "),
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -117,7 +128,7 @@ export default function HeroQuoteForm() {
       setFullName("");
       setEmail("");
       setPhone("");
-      setAdditionalServices("");
+      setSelectedServices([]);
     } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
@@ -357,19 +368,30 @@ export default function HeroQuoteForm() {
               </div>
             </div>
             <div>
-              <label htmlFor="additional-services" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-[#BECBD1]">
+              <span className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-[#BECBD1]">
                 Additional services
-              </label>
-              <div className="relative">
-                <List className="pointer-events-none absolute left-3 top-4 h-5 w-5 text-teal-dark z-10" aria-hidden />
-                <textarea
-                  id="additional-services"
-                  value={additionalServices}
-                  onChange={(e) => setAdditionalServices(e.target.value)}
-                  rows={3}
-                  placeholder="Packing, storage, cleaning, etc. (optional)"
-                  className={`${inputBase} resize-none pt-3.5`}
-                />
+              </span>
+              <div className="mt-2 flex flex-col gap-2 rounded-xl border-2 border-white/40 bg-white p-3 shadow-md">
+                {additionalServiceOptions.map((service) => (
+                  <label
+                    key={service}
+                    className="flex cursor-pointer items-center gap-3 rounded-lg py-2 px-2 transition-colors hover:bg-teal/5"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={selectedServices.includes(service)}
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          setSelectedServices((prev) => [...prev, service]);
+                        } else {
+                          setSelectedServices((prev) => prev.filter((s) => s !== service));
+                        }
+                      }}
+                      className="h-4 w-4 rounded border-2 border-teal-dark/40 text-teal-dark focus:ring-2 focus:ring-teal-dark/30"
+                    />
+                    <span className="text-sm font-medium text-deep">{service}</span>
+                  </label>
+                ))}
               </div>
             </div>
           </>
