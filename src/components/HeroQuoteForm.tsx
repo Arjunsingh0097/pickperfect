@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Home, MapPin, ChevronDown, FileText, Check, Calendar, User, Mail, Phone, ArrowRight, ArrowLeft } from "lucide-react";
+import PlacesAutocomplete from "@/components/PlacesAutocomplete";
+
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const moveTypes = [
@@ -218,33 +220,27 @@ export default function HeroQuoteForm() {
               <label htmlFor="moving-from" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-[#BECBD1]">
                 Move from
               </label>
-              <div className="relative">
-                <MapPin className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-teal-dark z-10" aria-hidden />
-                <input
-                  id="moving-from"
-                  type="text"
-                  value={movingFrom}
-                  onChange={(e) => setMovingFrom(e.target.value)}
-                  placeholder="Enter a post code or suburb..."
-                  className={inputBase}
-                />
-              </div>
+              <PlacesAutocomplete
+                id="moving-from"
+                value={movingFrom}
+                onChange={setMovingFrom}
+                placeholder="Enter a post code or suburb..."
+                className={inputBase}
+                aria-label="Move from (Australian suburb or address)"
+              />
             </div>
             <div>
               <label htmlFor="moving-to" className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-[#BECBD1]">
                 Move to
               </label>
-              <div className="relative">
-                <MapPin className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-teal-dark z-10" aria-hidden />
-                <input
-                  id="moving-to"
-                  type="text"
-                  value={movingTo}
-                  onChange={(e) => setMovingTo(e.target.value)}
-                  placeholder="Enter a post code or suburb..."
-                  className={inputBase}
-                />
-              </div>
+              <PlacesAutocomplete
+                id="moving-to"
+                value={movingTo}
+                onChange={setMovingTo}
+                placeholder="Enter a post code or suburb..."
+                className={inputBase}
+                aria-label="Move to (Australian suburb or address)"
+              />
             </div>
           </>
         )}
