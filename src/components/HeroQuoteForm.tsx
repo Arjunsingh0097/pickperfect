@@ -65,11 +65,24 @@ export default function HeroQuoteForm() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const today = new Date();
+  const minDateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+
   function handleNext() {
     setErrorMessage("");
     if (step === 1) {
       if (!movingFrom.trim() || !movingTo.trim()) {
         setErrorMessage("Please enter move from and move to.");
+        return;
+      }
+    }
+    if (step === 2) {
+      if (!movingDate.trim()) {
+        setErrorMessage("Please select a moving date.");
+        return;
+      }
+      if (movingDate < minDateStr) {
+        setErrorMessage("Moving date must be today or in the future.");
         return;
       }
     }
@@ -86,6 +99,10 @@ export default function HeroQuoteForm() {
     setErrorMessage("");
     if (!fullName.trim() || !email.trim() || !phone.trim()) {
       setErrorMessage("Please enter your full name, email and phone number.");
+      return;
+    }
+    if (!movingDate.trim() || movingDate < minDateStr) {
+      setErrorMessage("Moving date must be today or in the future.");
       return;
     }
     setStatus("loading");
@@ -321,6 +338,7 @@ export default function HeroQuoteForm() {
                   type="date"
                   value={movingDate}
                   onChange={(e) => setMovingDate(e.target.value)}
+                  min={minDateStr}
                   className={inputBase}
                 />
               </div>
