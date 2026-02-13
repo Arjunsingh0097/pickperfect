@@ -20,48 +20,63 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 h-16 w-full bg-white px-6">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between">
-        {/* Logo - larger logo, header height fixed at h-16 */}
-        <Link href="/" className="flex h-full items-center no-underline outline-none focus:outline-none focus:ring-0">
+    <header
+      className="sticky top-0 z-50 w-full bg-white px-6"
+      style={{
+        height: 109,
+        borderBottom: "1px solid rgba(191, 219, 247, 0.3)",
+      }}
+    >
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between md:grid md:grid-cols-3 md:justify-between">
+        {/* Logo - left */}
+        <Link href="/" className="flex h-full shrink-0 items-center no-underline outline-none focus:outline-none focus:ring-0">
           <ImageWithBasePath
-            src="/images/logo_main.png"
+            src="/images/logo_bg_removed.png"
             alt="Pick Perfect"
             width={280}
             height={72}
             priority
-            className="h-12 w-auto max-h-full sm:h-14"
+            className="h-16 w-auto max-h-full border-0 sm:h-20"
           />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={navLinkClass}
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* Desktop nav - center */}
+        <nav className="hidden justify-center md:flex" aria-label="Main">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={navLinkClass}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </nav>
 
-        {/* Desktop CTA */}
-        <QuoteModalTrigger className="hidden md:inline-flex rounded-full bg-deep px-6 py-2.5 font-medium text-white transition hover:bg-teal-dark focus:outline-none focus:ring-2 focus:ring-deep focus:ring-offset-2">
-          Get a Quote
-        </QuoteModalTrigger>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="text-2xl text-deep md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
+        {/* Desktop CTA + Mobile menu button - right */}
+        <div className="flex shrink-0 justify-end">
+          <QuoteModalTrigger
+            className="hidden md:inline-flex h-14 items-center justify-center rounded-full px-6 font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#145561] focus:ring-offset-2"
+            style={{
+              backgroundColor: "#145561",
+              boxShadow:
+                "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            Get a Quote
+          </QuoteModalTrigger>
+          <button
+            type="button"
+            className="text-2xl text-deep md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -80,7 +95,12 @@ export default function Header() {
             ))}
             <QuoteModalTrigger
               onClick={() => setMenuOpen(false)}
-              className="mt-4 inline-flex justify-center rounded-full bg-deep px-6 py-3 font-medium text-white"
+              className="mt-4 inline-flex h-14 items-center justify-center rounded-full px-6 font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#145561] focus:ring-offset-2"
+              style={{
+                backgroundColor: "#145561",
+                boxShadow:
+                  "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
+              }}
             >
               Get a Quote
             </QuoteModalTrigger>
