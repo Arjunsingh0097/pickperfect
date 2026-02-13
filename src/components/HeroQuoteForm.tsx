@@ -421,9 +421,9 @@ export default function HeroQuoteForm() {
             <button
               type="button"
               onClick={handleBack}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl border-2 border-white/60 bg-white/80 py-4 font-medium text-teal-dark transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl border-2 border-white/60 bg-white/80 py-4 font-medium text-teal-dark transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-white/50 whitespace-nowrap"
             >
-              <ArrowLeft className="h-5 w-5" aria-hidden />
+              <ArrowLeft className="h-5 w-5 shrink-0" aria-hidden />
               Back
             </button>
           )}
@@ -431,21 +431,21 @@ export default function HeroQuoteForm() {
             <button
               type="button"
               onClick={handleNext}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-teal-dark py-4 font-medium text-white shadow-lg ring-1 ring-white/20 transition hover:bg-deep focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-teal-dark py-4 font-medium text-white shadow-lg ring-1 ring-white/20 transition hover:bg-deep focus:outline-none focus:ring-2 focus:ring-white/50 whitespace-nowrap"
             >
               Next
-              <ArrowRight className="h-5 w-5" aria-hidden />
+              <ArrowRight className="h-5 w-5 shrink-0" aria-hidden />
             </button>
           ) : (
             <button
               type="submit"
               disabled={status === "loading"}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-teal-dark py-4 font-medium text-white shadow-lg ring-1 ring-white/20 transition hover:bg-deep focus:outline-none focus:ring-2 focus:ring-white/50 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-teal-dark py-4 font-medium text-white shadow-lg ring-1 ring-white/20 transition hover:bg-deep focus:outline-none focus:ring-2 focus:ring-white/50 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap"
             >
               {status === "loading" ? "Sending…" : (
                 <>
-                  <FileText className="h-5 w-5" aria-hidden />
-                  Get free quotes
+                  <FileText className="h-5 w-5 shrink-0" aria-hidden />
+                  <span className="whitespace-nowrap">Get quote</span>
                 </>
               )}
             </button>
