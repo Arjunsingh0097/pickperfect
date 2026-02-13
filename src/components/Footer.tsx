@@ -8,13 +8,14 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-8">
           <Link href="/" className="shrink-0">
             <ImageWithBasePath
-              src="/images/logo_bg_removed.png"
+              src="/images/logo_main.png"
               alt="Pick Perfect"
               width={180}
               height={46}
-              className="h-16 w-auto border-0 sm:h-20"
+              className="h-12 w-auto sm:h-14"
             />
           </Link>
+          <span className="h-4 w-px bg-teal-dark/30 shrink-0" aria-hidden />
           <p className="text-sm text-teal-dark/90 min-w-0">
             Compare removalist quotes across Brisbane, Melbourne & Perth.
           </p>
@@ -26,9 +27,9 @@ export default function Footer() {
             <Link href="#faq" className="transition hover:text-deep whitespace-nowrap">
               FAQ
             </Link>
-            <Link href="#how-it-works" className="transition hover:text-deep whitespace-nowrap">
-              How it works
-            </Link>
+            <a href="mailto:customerservice@pickperfect.com" className="transition hover:text-deep whitespace-nowrap">
+              Contact
+            </a>
           </nav>
           <span className="hidden sm:block h-4 w-px bg-teal-dark/30 shrink-0" aria-hidden />
           <p className="text-xs text-teal-dark/70 whitespace-nowrap">

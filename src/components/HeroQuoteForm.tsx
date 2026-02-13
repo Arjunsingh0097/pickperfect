@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Home, MapPin, ChevronDown, FileText, Check, Calendar, User, Mail, Phone, ArrowRight, ArrowLeft } from "lucide-react";
-
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const moveTypes = [
