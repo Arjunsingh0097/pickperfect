@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "en_AU",
       images: [
         {
-          url: `${BASE_URL}/social/og.jpg`,
+          url: `${BASE_URL}/images/faqsection_photo.png`,
           width: 1200,
           height: 630,
           alt: "Customers comparing removalist quotes on Pick Perfect",
@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: seo.title,
       description: seo.metaDescription,
-      images: [`${BASE_URL}/social/og.jpg`],
+      images: [`${BASE_URL}/images/faqsection_photo.png`],
       site: "@pickperfect",
     },
     robots: {
