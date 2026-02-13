@@ -10,6 +10,7 @@ const dmSans = DM_Sans({
 });
 
 const BASE_URL = "https://pickperfect.com.au";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 // Re-read SEO config on every request so dashboard changes appear on the landing page
 export const dynamic = "force-dynamic";
@@ -67,9 +68,9 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     icons: {
-      icon: "/fav.png",
-      shortcut: "/fav.png",
-      apple: "/fav.png",
+      icon: [{ url: `${BASE_URL}${BASE_PATH}/fav.png`, type: "image/png" }],
+      shortcut: `${BASE_URL}${BASE_PATH}/fav.png`,
+      apple: `${BASE_URL}${BASE_PATH}/fav.png`,
     },
   };
 }
@@ -124,6 +125,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href={`${BASE_PATH}/fav.png`} type="image/png" />
+        <link rel="apple-touch-icon" href={`${BASE_PATH}/fav.png`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: scriptContent }}
