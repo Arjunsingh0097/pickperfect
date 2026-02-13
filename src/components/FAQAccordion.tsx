@@ -45,7 +45,7 @@ export default function FAQAccordion() {
               }`}
               aria-expanded={isOpen}
             >
-              <span className="font-semibold text-deep">{item.question}</span>
+              <h3 className="font-semibold text-deep m-0 text-base">{item.question}</h3>
               <span
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-teal-dark transition duration-200 ${
                   isOpen ? "rotate-180" : ""

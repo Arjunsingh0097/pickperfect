@@ -87,7 +87,16 @@ export default function Home() {
               {/* Right: Overlapping image cards with pill labels */}
               <div className="relative">
               <div className="relative flex flex-col gap-6 lg:block lg:gap-0">
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:block">
+                {/* Top photo with 3D tilt and depth */}
+                <div
+                  className="relative overflow-hidden rounded-2xl border border-white/10 lg:block [perspective:800px]"
+                  style={{
+                    boxShadow:
+                      "0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,0.08), 8px 12px 24px -8px rgba(0, 0, 0, 0.4)",
+                    transform: "perspective(800px) rotateY(-4deg) rotateX(3deg)",
+                    transformStyle: "preserve-3d",
+                  }}
+                >
                   <ImageWithBasePath
                     src="/images/Howitworks(1).png"
                     alt="How it works"
@@ -95,7 +104,10 @@ export default function Home() {
                     height={400}
                     className="h-56 w-full object-cover object-top sm:h-64 lg:h-80"
                   />
-                  <span className="absolute right-4 top-4 rounded-full bg-mint px-4 py-1.5 text-sm font-medium text-teal-dark">
+                  <span
+                    className="absolute right-4 top-4 rounded-full bg-mint px-4 py-1.5 text-sm font-medium text-teal-dark"
+                    style={{ transform: "translateZ(12px)" }}
+                  >
                     Compare & Save
                   </span>
                 </div>
