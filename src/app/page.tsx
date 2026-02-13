@@ -18,14 +18,22 @@ export default function Home() {
         {/* How it works */}
         <section
           id="how-it-works"
-          className="scroll-mt-20 bg-teal-dark px-8 py-16 lg:py-24 lg:px-16 xl:px-24"
+          className="scroll-mt-20 px-8 py-16 lg:py-24 lg:px-16 xl:px-24"
+          style={{ backgroundColor: "#145561" }}
         >
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-              <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+              <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl" style={{ color: "#B0D4DB" }}>
                 How it works
               </h2>
-              <QuoteModalTrigger className="inline-flex shrink-0 items-center justify-center rounded-xl bg-mint px-6 py-3 text-sm font-medium text-teal-dark transition hover:bg-mint/90 focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-teal-dark">
+              <QuoteModalTrigger
+                className="inline-flex h-14 shrink-0 items-center justify-center rounded-full px-8 font-medium text-teal-dark transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#B0D4DB] focus:ring-offset-2"
+                style={{
+                  backgroundColor: "#B0D4DB",
+                  boxShadow:
+                    "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
+                }}
+              >
                 Get a free Quote
               </QuoteModalTrigger>
             </div>
@@ -60,7 +68,7 @@ export default function Home() {
                   },
                 ].map((step) => (
                   <li key={step.num} className="flex gap-6">
-                    <span className="text-2xl font-bold text-mint lg:text-3xl">
+                    <span className="text-2xl font-bold text-white lg:text-3xl">
                       {step.num}.
                     </span>
                     <div>
@@ -90,7 +98,7 @@ export default function Home() {
                     Compare & Save
                   </span>
                 </div>
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:absolute lg:-bottom-48 lg:-right-16 lg:w-[85%]">
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl lg:absolute lg:-bottom-32 lg:-right-16 lg:w-[85%]">
                   <ImageWithBasePath
                     src="/images/Howitworks(2).jpg"
                     alt="How it works"
@@ -121,7 +129,17 @@ export default function Home() {
           <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20 lg:items-start">
             {/* Left: About Pick Perfect */}
             <div>
-              <h2 className="text-3xl font-bold text-deep sm:text-4xl lg:text-[2rem]">
+              <h2
+                className="whitespace-nowrap font-bold"
+                style={{
+                  fontFamily: "var(--font-dm-sans), DM Sans, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.875rem, 8vw, 60px)",
+                  lineHeight: "clamp(1.875rem, 8vw, 60px)",
+                  letterSpacing: 0,
+                  color: "#0D3842",
+                }}
+              >
                 About Pick Perfect
               </h2>
               <p className="mt-6 text-base leading-relaxed text-teal-dark">
@@ -143,7 +161,7 @@ export default function Home() {
               </div>
             </div>
             {/* Right: Are you a moving company? */}
-            <div className="rounded-2xl bg-[#e8edef] p-8 lg:p-10">
+            <div className="mt-12 rounded-2xl bg-[#e8edef] p-8 lg:mt-24 lg:p-10">
               <h2 className="text-3xl font-bold text-deep sm:text-4xl lg:text-[2rem]">
                 Are you a moving company?
               </h2>
@@ -167,14 +185,21 @@ export default function Home() {
             <div className="mx-auto max-w-6xl">
               <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+                  <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl" style={{ color: "#B0D4DB" }}>
                     Find your perfect movers
                   </h2>
                   <p className="mt-2 text-lg text-white/80">
                     Compare removalists in Brisbane, Melbourne and Perth
                   </p>
                 </div>
-                <QuoteModalTrigger className="inline-flex shrink-0 items-center justify-center rounded-full bg-mint px-8 py-4 text-base font-semibold text-teal-dark transition hover:bg-mint/90 focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-teal-dark">
+                <QuoteModalTrigger
+                  className="inline-flex h-14 shrink-0 items-center justify-center rounded-full px-8 font-medium text-teal-dark transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#B0D4DB] focus:ring-offset-2"
+                  style={{
+                    backgroundColor: "#B0D4DB",
+                    boxShadow:
+                      "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
                   Get a free Quote
                 </QuoteModalTrigger>
               </div>
@@ -201,7 +226,7 @@ export default function Home() {
                     href="#contact"
                     className="group relative overflow-hidden rounded-2xl bg-white shadow-xl transition hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-teal-dark"
                   >
-                    <div className="relative aspect-4/3 overflow-hidden">
+                    <div className="relative aspect-[4/3] overflow-hidden">
                       <ImageWithBasePath
                         src={card.image}
                         alt={card.alt}
@@ -209,9 +234,21 @@ export default function Home() {
                         height={400}
                         className="h-full w-full object-cover transition group-hover:scale-105"
                       />
-                      <span className="absolute bottom-4 left-4 rounded-lg bg-white/95 px-4 py-2.5 text-lg font-bold text-deep shadow-md backdrop-blur-sm">
-                        {card.city}
-                      </span>
+                      <div className="absolute left-4 top-4 flex flex-col items-start">
+                        <div className="relative -mb-3 ml-2 z-10">
+                          <ImageWithBasePath
+                            src="/images/locationIcon.png"
+                            alt=""
+                            width={48}
+                            height={48}
+                            className="h-10 w-10 object-contain drop-shadow-md sm:h-12 sm:w-12"
+                            aria-hidden
+                          />
+                        </div>
+                        <span className="rounded-xl bg-white/95 px-4 py-2.5 text-lg font-bold text-deep shadow-md backdrop-blur-sm">
+                          {card.city}
+                        </span>
+                      </div>
                     </div>
                   </a>
                 ))}
@@ -223,13 +260,19 @@ export default function Home() {
         {/* What's all the fuss about? - Testimonials */}
         <section
           id="testimonials"
-          className="scroll-mt-20 bg-[#e8edef] px-8 py-16 lg:py-20 lg:px-16 xl:px-24"
+          className="scroll-mt-20 px-8 py-16 lg:py-20 lg:px-16 xl:px-24"
+          style={{ backgroundColor: "#B0D4DB" }}
         >
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-deep sm:text-4xl lg:text-5xl">
-              What our customers say
+              What&apos;s all the fuss about?
             </h2>
-            <TestimonialMarquee />
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-teal-dark lg:text-lg">
+              Every day, thousands of Australians come to Pick Perfect to make connections with the right experts.
+            </p>
+            <div className="mt-10">
+              <TestimonialMarquee />
+            </div>
           </div>
         </section>
 
@@ -239,7 +282,7 @@ export default function Home() {
           className="scroll-mt-20 bg-teal-dark px-8 py-16 lg:py-20 lg:px-16 xl:px-24"
         >
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl" style={{ color: "#B0D4DB" }}>
               Frequently asked questions
             </h2>
             <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
@@ -248,8 +291,8 @@ export default function Home() {
               </div>
               <div className="relative min-h-[320px] w-full lg:min-h-[480px] lg:pl-4">
                 <ImageWithBasePath
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop"
-                  alt="Interior with moving boxes and furniture"
+                  src="/images/faqsection_photo.png"
+                  alt="FAQ section"
                   width={800}
                   height={600}
                   className="absolute inset-0 h-full w-full rounded-r-2xl rounded-bl-2xl object-cover"

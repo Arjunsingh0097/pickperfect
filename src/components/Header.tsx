@@ -8,6 +8,7 @@ import { QuoteModalTrigger } from "@/components/QuoteModalTrigger";
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About us" },
+  { href: "#faq", label: "FAQ" },
   { href: "#how-it-works", label: "How it works" },
 ];
 

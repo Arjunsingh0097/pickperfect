@@ -134,9 +134,20 @@ export default function HeroQuoteForm() {
     }
   }
 
+  const formContainerStyle = {
+    background: "linear-gradient(180deg, #145561 0%, #1F7A8C 50%)",
+    borderRadius: 24,
+    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+    minHeight: 520,
+    maxWidth: 636,
+  };
+
   if (status === "success") {
     return (
-      <div className="w-full rounded-2xl bg-gradient-to-b from-teal/85 via-teal/70 to-[#6b9cb0]/65 p-6 shadow-xl backdrop-blur-sm sm:p-8">
+      <div
+        className="w-full p-6 sm:p-8"
+        style={formContainerStyle}
+      >
         <p className="rounded-xl bg-white/90 px-4 py-4 text-center font-medium text-teal-dark" role="status">
           Thanks! We&apos;ll be in touch with quotes soon.
         </p>
@@ -145,7 +156,10 @@ export default function HeroQuoteForm() {
   }
 
   return (
-    <div className="w-full rounded-2xl bg-gradient-to-b from-teal/85 via-teal/70 to-[#6b9cb0]/65 p-6 shadow-xl backdrop-blur-sm sm:p-8">
+    <div
+      className="w-full p-6 sm:p-8"
+      style={formContainerStyle}
+    >
       {/* Step indicator */}
       <div className="mb-6 flex gap-2">
         {[1, 2, 3].map((s) => (
