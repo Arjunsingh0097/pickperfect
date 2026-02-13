@@ -19,7 +19,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 h-16 w-full bg-white px-6 shadow-sm">
+    <header className="sticky top-0 z-50 h-16 w-full bg-white px-6">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between">
         {/* Logo - larger logo, header height fixed at h-16 */}
         <Link href="/" className="flex h-full items-center no-underline outline-none focus:outline-none focus:ring-0">

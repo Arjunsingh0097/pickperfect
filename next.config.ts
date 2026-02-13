@@ -6,6 +6,12 @@ const appRoot = path.resolve(__dirname);
 const nextConfig: NextConfig = {
   basePath: "/compare-quotes",
   env: { NEXT_PUBLIC_BASE_PATH: "/compare-quotes" },
+  // Redirect / to /compare-quotes (basePath: false so destination is not prefixed again)
+  async redirects() {
+    return [
+      { source: "/", destination: "/compare-quotes", permanent: false, basePath: false },
+    ];
+  },
   // Use Frontend as project root so tailwindcss/postcss resolve from Frontend/node_modules
   // (avoids resolving from repo root or home dir when lockfiles exist elsewhere)
   turbopack: {

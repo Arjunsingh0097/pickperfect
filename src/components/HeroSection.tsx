@@ -66,11 +66,6 @@ export default function HeroSection({ data, backgroundColor = "#B0D4DB" }: HeroS
               >
                 {hero.highlightText ?? defaults.highlightText}
               </p>
-              <div className="mt-8 max-w-md rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-                <p className="whitespace-pre-line text-base leading-relaxed text-gray-700 lg:text-lg">
-                  {hero.infoBox ?? defaults.infoBox}
-                </p>
-              </div>
             </div>
           </div>
         </div>
