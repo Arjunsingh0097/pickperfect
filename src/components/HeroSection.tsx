@@ -49,16 +49,11 @@ export default function HeroSection({ data, backgroundColor = "#B0D4DB" }: HeroS
             </div>
             {/* Right: heading + copy + info box */}
             <div className="order-1 lg:order-2 space-y-6 font-sans w-full max-w-[636px] lg:justify-self-end">
-              <h1
-                className="text-deep"
-                style={HERO_HEADING_STYLE}
-              >
-                <span className="inline">{hero.title ?? defaults.title}</span>
+              <h1 className="text-deep" style={HERO_HEADING_STYLE}>
+                {hero.title ?? defaults.title}
                 <br />
-                <span className="inline">
-                  <span className="text-deep">{hero.subtitle ?? defaults.subtitle}</span>{" "}
-                  <span className="text-teal">{hero.brandText ?? defaults.brandText}</span>
-                </span>
+                {hero.subtitle ?? defaults.subtitle}{" "}
+                <span className="text-teal whitespace-nowrap">{hero.brandText ?? defaults.brandText}</span>
               </h1>
               <p
                 className="text-lg leading-relaxed lg:text-xl"
