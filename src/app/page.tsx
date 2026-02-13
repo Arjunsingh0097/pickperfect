@@ -1,9 +1,9 @@
 import ImageWithBasePath from "@/components/ImageWithBasePath";
 import Link from "next/link";
 import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
 import FAQAccordion from "@/components/FAQAccordion";
 import Footer from "@/components/Footer";
-import HeroQuoteForm from "@/components/HeroQuoteForm";
 import TestimonialMarquee from "@/components/TestimonialMarquee";
 import { QuoteModalTrigger } from "@/components/QuoteModalTrigger";
 
@@ -12,33 +12,8 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Mint band separator (from design) */}
-      <div className="h-2 w-full bg-mint" aria-hidden />
-
       <main>
-        {/* Hero */}
-        <section
-          id="home"
-          className="bg-[#e0ebf0] px-8 py-16 lg:py-24 lg:px-16 xl:px-24"
-        >
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-16 lg:grid-cols-5 lg:gap-20">
-            {/* Content first on mobile, right column on desktop */}
-            <div className="order-1 flex flex-col justify-center lg:order-2 lg:col-span-3">
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-deep sm:text-4xl lg:text-5xl">
-                Compare removalists with{" "}
-                <span className="text-[#6dc1d2]">Pick Perfect</span>
-              </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-teal-dark lg:text-lg">
-                Request to receive quotes from 5+ moving companies. Compare
-                options in your own time. Simple and stress-free.
-              </p>
-            </div>
-            {/* Form second on mobile, left column on desktop */}
-            <div className="order-2 lg:order-1 lg:col-span-2">
-              <HeroQuoteForm />
-            </div>
-          </div>
-        </section>
+        <HeroSection backgroundColor="#B0D4DB" />
 
         {/* How it works */}
         <section
@@ -157,19 +132,14 @@ export default function Home() {
                 Submit one request, receive multiple quotes, and compare
                 services and prices at your own pace.
               </p>
-              {/* Overlapping profile circles */}
-              <div className="mt-10 flex -space-x-4">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <ImageWithBasePath
-                    key={i}
-                    src={`https://i.pravatar.cc/112?img=${10 + i}`}
-                    alt=""
-                    width={56}
-                    height={56}
-                    className="h-14 w-14 shrink-0 rounded-full border-2 border-white object-cover shadow-md"
-                    aria-hidden
-                  />
-                ))}
+              <div className="mt-10">
+                <ImageWithBasePath
+                  src="/images/circleimages.png"
+                  alt="Pick Perfect community"
+                  width={300}
+                  height={80}
+                  className="h-16 w-auto object-contain object-left sm:h-20"
+                />
               </div>
             </div>
             {/* Right: Are you a moving company? */}

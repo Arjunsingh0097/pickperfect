@@ -8,7 +8,6 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const moveTypes = [
   { value: "local", label: "Local Move" },
   { value: "interstate", label: "Interstate Move" },
-  { value: "international", label: "International Move" },
 ];
 
 const jobTypes = [
