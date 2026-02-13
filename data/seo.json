@@ -1,6 +1,6 @@
 {
-  "title": "Compare removalists and request moving quotes | Pick Perfect",
-  "metaDescription": "Request moving quotes from multiple local and interstate removalists. Compare and choose the right one with Pick Perfect, simple and free.",
-  "slug": "compare-quotes",
-  "jsonLdSchema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://pickperfect.com.au/#website\",\"url\":\"https://pickperfect.com.au\",\"name\":\"Pick Perfect\",\"description\":\"Compare removalists in Brisbane, Melbourne and Perth. Request quotes from 5+ moving companies. Simple and stress-free.\",\"publisher\":{\"@id\":\"https://pickperfect.com.au/#organization\"},\"inLanguage\":\"en-AU\"},{\"@type\":\"Organization\",\"@id\":\"https://pickperfect.com.au/#organization\",\"name\":\"Pick Perfect\",\"url\":\"https://pickperfect.com.au\",\"logo\":\"https://pickperfect.com.au/images/logo.png\"}]}"
+  "title": "iiii",
+  "metaDescription": "xxxx",
+  "slug": "compare",
+  "jsonLdSchema": "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"WebSite\",\n      \"@id\": \"https://pickperfect.com.au/#website\",\n      \"url\": \"https://pickperfect.com.au\",\n      \"name\": \"Pick Perfect\",\n      \"description\": \"Compare removalists in Brisbane, Melbourne and Perth. Request quotes from 5+ moving companies. Simple and stress-free.\",\n      \"publisher\": {\n        \"@id\": \"https://pickperfect.com.au/#organization\"\n      },\n      \"inLanguage\": \"en-AU\"\n    },\n    {\n      \"@type\": \"yoyo honey singh\",\n      \"@id\": \"https://pickperfect.com.au/#organization\",\n      \"name\": \"Pick Perfect\",\n      \"url\": \"https://pickperfect.com.au\",\n      \"logo\": \"https://pickperfect.com.au/images/logo.png\"\n    }\n  ]\n}"
 }

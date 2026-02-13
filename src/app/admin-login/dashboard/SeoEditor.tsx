@@ -67,7 +67,6 @@ export function SeoEditor() {
       body: JSON.stringify({
         title: config.title,
         metaDescription: config.metaDescription,
-        slug: config.slug,
         jsonLdSchema: config.jsonLdSchema,
       }),
     })
@@ -95,7 +94,7 @@ export function SeoEditor() {
     <div className="rounded-xl border border-mint bg-white p-6 shadow">
       <h2 className="text-xl font-medium text-deep mb-1">Landing page SEO</h2>
       <p className="text-sm text-gray-600 mb-6">
-        Edit meta title, description, slug, and JSON-LD schema. Changes apply to the main landing page.
+        Edit meta title, description, and JSON-LD schema. Changes apply to the main landing page.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -125,23 +124,6 @@ export function SeoEditor() {
             className="w-full rounded-lg border border-gray-300 px-3 py-2 text-deep focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
             placeholder="Short description for search results and social sharing."
           />
-        </div>
-
-        <div>
-          <label htmlFor="seo-slug" className="block text-sm font-medium text-deep mb-1">
-            Slug
-          </label>
-          <input
-            id="seo-slug"
-            type="text"
-            value={config.slug}
-            onChange={(e) => setConfig((c) => ({ ...c, slug: e.target.value }))}
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-deep focus:border-teal focus:outline-none focus:ring-1 focus:ring-teal"
-            placeholder="e.g. compare-quotes"
-          />
-          <p className="mt-1 text-xs text-gray-500">
-            Used for canonical URL: https://www.pickperfect.com/[slug]
-          </p>
         </div>
 
         <div>
