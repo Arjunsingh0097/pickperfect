@@ -26,9 +26,9 @@ export default function Footer() {
             <Link href="#faq" className="transition hover:text-deep whitespace-nowrap">
               FAQ
             </Link>
-            <a href="mailto:customerservice@pickperfect.com" className="transition hover:text-deep whitespace-nowrap">
-              Contact
-            </a>
+            <Link href="#how-it-works" className="transition hover:text-deep whitespace-nowrap">
+              How it works
+            </Link>
           </nav>
           <span className="hidden sm:block h-4 w-px bg-teal-dark/30 shrink-0" aria-hidden />
           <p className="text-xs text-teal-dark/70 whitespace-nowrap">
