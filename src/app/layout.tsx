@@ -68,9 +68,11 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     icons: {
-      icon: [{ url: `${BASE_URL}${BASE_PATH}/fav.png`, type: "image/png" }],
-      shortcut: `${BASE_URL}${BASE_PATH}/fav.png`,
-      apple: `${BASE_URL}${BASE_PATH}/fav.png`,
+      icon: [
+        { url: `${BASE_URL}${BASE_PATH}/mainfavicon.png`, type: "image/png" },
+      ],
+      shortcut: `${BASE_URL}${BASE_PATH}/mainfavicon.png`,
+      apple: `${BASE_URL}${BASE_PATH}/mainfavicon.png`,
     },
   };
 }
@@ -120,13 +122,19 @@ export default async function RootLayout({
   const seo = await getSeoConfig();
   const jsonLd = parseJsonLdSchema(seo.jsonLdSchema);
   const scriptContent =
-    Object.keys(jsonLd).length > 0 ? JSON.stringify(jsonLd) : JSON.stringify(defaultJsonLd);
+    Object.keys(jsonLd).length > 0
+      ? JSON.stringify(jsonLd)
+      : JSON.stringify(defaultJsonLd);
 
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href={`${BASE_PATH}/fav.png`} type="image/png" />
-        <link rel="apple-touch-icon" href={`${BASE_PATH}/fav.png`} />
+        <link
+          rel="icon"
+          href={`${BASE_PATH}/mainfavicon.png`}
+          type="image/png"
+        />
+        <link rel="apple-touch-icon" href={`${BASE_PATH}/mainfavicon.png`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: scriptContent }}
