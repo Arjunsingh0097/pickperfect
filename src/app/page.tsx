@@ -35,7 +35,7 @@ export default function Home() {
                     "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                Get a free Quote
+                Get a free quote
               </QuoteModalTrigger>
             </div>
             <div className="mt-10 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20 lg:items-start">
@@ -213,7 +213,7 @@ export default function Home() {
                       "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
                   }}
                 >
-                  Get a free Quote
+                  Get a free quote
                 </QuoteModalTrigger>
               </div>
               <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

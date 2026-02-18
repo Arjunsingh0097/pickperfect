@@ -167,7 +167,7 @@ export default function HeroQuoteForm() {
         style={formContainerStyle}
       >
         <p className="rounded-xl bg-white/90 px-4 py-4 text-center font-medium text-teal-dark" role="status">
-          Thanks! We&apos;ll be in touch with quotes soon.
+          We have received your enquires. The removalists will be in touch to provide quotes.
         </p>
       </div>
     );
