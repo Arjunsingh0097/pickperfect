@@ -4,8 +4,14 @@ let initialized = false
 
 function ensureInitialized() {
   if (!initialized) {
+    const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    if (!key && typeof window !== "undefined") {
+      console.warn(
+        "[Google Maps] NEXT_PUBLIC_GOOGLE_MAPS_API_KEY is not set. Add it in Vercel → Settings → Environment Variables for production."
+      )
+    }
     setOptions({
-      key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+      key: (key || "") as string,
       v: "weekly",
       libraries: ["places"],
     })
