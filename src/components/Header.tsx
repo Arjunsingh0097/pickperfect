@@ -65,7 +65,7 @@ export default function Header() {
                 "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
             }}
           >
-            Get a Quote
+            Get a quote
           </QuoteModalTrigger>
           <button
             type="button"
@@ -102,7 +102,7 @@ export default function Header() {
                   "0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1)",
               }}
             >
-              Get a Quote
+              Get a quote
             </QuoteModalTrigger>
           </nav>
         </div>

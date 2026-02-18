@@ -30,6 +30,7 @@ export default function AddressSearch({
   const [isOpen, setIsOpen] = useState(false)
   const debounceRef = useRef<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const justSelectedRef = useRef(false)
 
   const fetchSuggestions = useCallback(
     async (input: string) => {
@@ -75,6 +76,14 @@ export default function AddressSearch({
     if (!value) {
       setSuggestions([])
       setIsOpen(false)
+      justSelectedRef.current = false
+      return
+    }
+
+    if (justSelectedRef.current) {
+      justSelectedRef.current = false
+      setSuggestions([])
+      setIsOpen(false)
       return
     }
 
@@ -91,6 +100,7 @@ export default function AddressSearch({
 
   const handleSelect = (item: PlacePrediction) => {
     const text = item.text?.text ?? ""
+    justSelectedRef.current = true
     onChange(text)
     setSuggestions([])
     setIsOpen(false)

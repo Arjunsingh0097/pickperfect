@@ -70,13 +70,6 @@ function Card({ review }: { review: (typeof REVIEWS)[0] }) {
       <p className="mt-4 text-sm leading-relaxed text-teal-dark">
         {review.text}
       </p>
-      <a
-        href="#"
-        className="mt-3 inline-block text-sm font-medium text-teal-dark underline hover:text-deep"
-      >
-        Read more
-      </a>
-      <p className="mt-4 text-xs text-teal-dark/70">{review.date}</p>
     </article>
   );
 }

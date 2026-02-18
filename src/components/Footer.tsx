@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-20 border-t border-[#e0e5e8] bg-[#f8f9fa]">
-      <div className="mx-auto max-w-6xl px-8 py-8 lg:px-16 xl:px-24">
+    <footer id="contact" className="scroll-mt-20 border-t border-[#e0e5e8] bg-[#f8f9fa] px-12 py-8 lg:px-24 xl:px-32">
+      <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-8">
-          <Link href="/" className="shrink-0">
+          <Link href="/" className="shrink-0 pr-6">
             <ImageWithBasePath
               src="/images/logo_bg_removed.png"
               alt="Pick Perfect"

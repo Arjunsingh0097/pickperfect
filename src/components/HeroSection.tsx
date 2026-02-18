@@ -42,13 +42,9 @@ export default function HeroSection({ data, backgroundColor = "#B0D4DB" }: HeroS
     >
       <div className="relative z-10 flex flex-1 items-center w-full">
         <div className="mx-auto w-full max-w-7xl px-6 py-12 lg:py-16">
-          <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-[40%_60%] xl:gap-x-24">
-            {/* Left: quote form */}
-            <div className="order-2 lg:order-1 flex justify-start lg:block">
-              <HeroQuoteForm />
-            </div>
-            {/* Right: heading + copy + info box */}
-            <div className="order-1 lg:order-2 space-y-6 font-sans w-full max-w-[636px] lg:justify-self-end">
+          <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-[60%_40%] xl:gap-x-24">
+            {/* Left: heading + copy */}
+            <div className="order-1 space-y-6 font-sans w-full max-w-[636px]">
               <h1 className="text-deep" style={HERO_HEADING_STYLE}>
                 {hero.title ?? defaults.title}
                 <br />
@@ -61,6 +57,10 @@ export default function HeroSection({ data, backgroundColor = "#B0D4DB" }: HeroS
               >
                 {hero.highlightText ?? defaults.highlightText}
               </p>
+            </div>
+            {/* Right: quote form */}
+            <div className="order-2 flex justify-start lg:block">
+              <HeroQuoteForm />
             </div>
           </div>
         </div>
