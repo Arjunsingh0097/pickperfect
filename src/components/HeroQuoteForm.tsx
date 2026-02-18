@@ -20,12 +20,14 @@ const jobTypes = [
 const additionalServiceOptions = [
   "Moving Home",
   "Moving Office",
-  "Furniture Removals",
-  "Commercial Removals",
-  "Corporate Relocations",
-  "Packing",
-  "Interstate Removalists",
-  "Local Removalists",
+  "Furniture removals",
+  "Commercial removals",
+  "Corporate removals",
+  "Packing & unpacking",
+  "Interstate removalists",
+  "Local removalists",
+  "Cleaning service",
+  "Storage",
 ];
 
 const inputBase =
