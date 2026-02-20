@@ -31,7 +31,7 @@ export default function Header() {
         {/* Logo - left */}
         <Link href="/" className="flex h-full shrink-0 items-center no-underline outline-none focus:outline-none focus:ring-0">
           <ImageWithBasePath
-            src="/images/logo_bg_removed.png"
+            src="/images/mainlogo_company.png"
             alt="Pick Perfect"
             width={280}
             height={72}
