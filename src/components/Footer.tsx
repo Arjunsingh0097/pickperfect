@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-8">
           <Link href="/" className="shrink-0 pr-6">
             <ImageWithBasePath
-              src="/images/mainlogo_company.png"
+              src="/images/latestlogo.png"
               alt="Pick Perfect"
               width={180}
               height={46}

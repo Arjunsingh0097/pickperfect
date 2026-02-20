@@ -69,10 +69,10 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     icons: {
       icon: [
-        { url: `${BASE_URL}${BASE_PATH}/mainfavicon.png`, type: "image/png" },
+        { url: `${BASE_URL}${BASE_PATH}/images/latestlogo.png`, type: "image/png" },
       ],
-      shortcut: `${BASE_URL}${BASE_PATH}/mainfavicon.png`,
-      apple: `${BASE_URL}${BASE_PATH}/mainfavicon.png`,
+      shortcut: `${BASE_URL}${BASE_PATH}/images/latestlogo.png`,
+      apple: `${BASE_URL}${BASE_PATH}/images/latestlogo.png`,
     },
   };
 }
@@ -131,10 +131,10 @@ export default async function RootLayout({
       <head>
         <link
           rel="icon"
-          href={`${BASE_PATH}/mainfavicon.png`}
+          href={`${BASE_PATH}/images/latestlogo.png`}
           type="image/png"
         />
-        <link rel="apple-touch-icon" href={`${BASE_PATH}/mainfavicon.png`} />
+        <link rel="apple-touch-icon" href={`${BASE_PATH}/images/latestlogo.png`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: scriptContent }}
