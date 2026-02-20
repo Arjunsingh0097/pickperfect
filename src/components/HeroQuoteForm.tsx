@@ -12,22 +12,23 @@ const moveTypes = [
 ];
 
 const jobTypes = [
-  { value: "1-5-bedrooms", label: "1–5+ bedrooms" },
+  { value: "1", label: "1" },
+  { value: "2", label: "2" },
+  { value: "3", label: "3" },
+  { value: "4", label: "4" },
+  { value: "5+", label: "5+" },
   { value: "office", label: "Office" },
+  { value: "commercial", label: "Commercial" },
   { value: "others", label: "Others" },
 ];
 
 const additionalServiceOptions = [
-  "Moving Home",
-  "Moving Office",
-  "Furniture removals",
-  "Commercial removals",
-  "Corporate removals",
-  "Packing & unpacking",
-  "Interstate removalists",
-  "Local removalists",
-  "Cleaning service",
+  "Cleaning",
+  "Pest Control",
   "Storage",
+  "Electricity",
+  "Gas",
+  "Packing / Unpacking",
 ];
 
 const inputBase =
@@ -44,7 +45,7 @@ export default function HeroQuoteForm() {
   const [movingFrom, setMovingFrom] = useState("");
   const [movingTo, setMovingTo] = useState("");
 
-  const [jobType, setJobType] = useState("1-5-bedrooms");
+  const [jobType, setJobType] = useState("1");
   const [jobTypeDetails, setJobTypeDetails] = useState("");
   const [movingDate, setMovingDate] = useState("");
 
@@ -141,7 +142,7 @@ export default function HeroQuoteForm() {
       setMoveType("local");
       setMovingFrom("");
       setMovingTo("");
-      setJobType("1-5-bedrooms");
+      setJobType("1");
       setJobTypeDetails("");
       setMovingDate("");
       setFullName("");
@@ -290,7 +291,7 @@ export default function HeroQuoteForm() {
                     <FileText className="h-5 w-5" aria-hidden />
                   </span>
                   <span className="flex-1 font-medium">
-                    {jobTypes.find((o) => o.value === jobType)?.label ?? "1–5+ bedrooms"}
+                    {jobTypes.find((o) => o.value === jobType)?.label ?? "1"}
                   </span>
                   <ChevronDown className={`h-5 w-5 shrink-0 text-teal-dark transition-transform duration-200 ${jobDropdownOpen ? "rotate-180" : ""}`} aria-hidden />
                 </button>
